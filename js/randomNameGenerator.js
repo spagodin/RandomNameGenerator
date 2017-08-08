@@ -15,6 +15,7 @@ const printList = listName => {
         html += `<li> ${listName[i]} </li>`;
     }
     html += '</ul>'
+    document.getElementById('results').innerHTML = `${numNames} Random Names`
     return html;
 };
 
@@ -22,7 +23,7 @@ goButton.addEventListener('click', () => {
     numNames = parseInt(document.getElementById('numNames').value);
     randomNames();
     document.getElementById('randomNames').innerHTML = printList(nameList);
-    console.log(numNames);
+    nameList = [];
 });
 
 
