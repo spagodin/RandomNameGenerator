@@ -1,9 +1,10 @@
 let nameList = [];
+let numNames = '';
 
 const randomArrayIndex = array => Math.floor(Math.random() * array.length) + 1;
 
 const randomNames = () => {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < numNames; i++) {
         nameList.push(`${firstName[randomArrayIndex(firstName)]} ${lastName[randomArrayIndex(lastName)]}`);
     }
 };
@@ -17,8 +18,13 @@ const printList = listName => {
     return html;
 };
 
-randomNames();
-document.getElementById('randomNames').innerHTML = printList(nameList);
+goButton.addEventListener('click', () => {
+    numNames = parseInt(document.getElementById('numNames').value);
+    randomNames();
+    document.getElementById('randomNames').innerHTML = printList(nameList);
+    console.log(numNames);
+});
+
 
 
 
