@@ -31,16 +31,14 @@ const printList = listName => {
 };
 
 goButton.addEventListener('click', () => {
-    numNames = parseInt(document.getElementById('numNames').value);
+    numNames = parseInt(document.getElementById('numNamesInput').value);
     randomNames();
     document.getElementById('randomNames').innerHTML = printList(nameList);
     nameList = [];
 });
 
-numNamesInput.addEventListener('keyup', () => {
-  //check to see if the enter key was pressed
+numNamesInput.addEventListener('keyup', (event) => {
   if (event.which === 13) {
-    //if so, run the addTask function
-    document.getElementById("goButton").click()
+    document.getElementById("goButton").click();
   }
 });
