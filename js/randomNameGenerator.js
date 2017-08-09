@@ -3,7 +3,7 @@ let numNames = '';
 let goButton = document.getElementById('goButton');
 let numNamesInput = document.getElementById('numNamesInput');
 
-const randomArrayIndex = array => Math.floor(Math.random() * array.length) + 1;
+const randomArrayIndex = array => Math.floor(Math.random() * array.length);
 
 const randomNames = () => {
     if(parseInt(numNames)>0) {
